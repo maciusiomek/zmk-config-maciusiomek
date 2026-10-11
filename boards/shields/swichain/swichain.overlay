@@ -1,4 +1,5 @@
 #include <zephyr/dt-bindings/led/led.h>
+#include <zephyr/dt-bindings/gpio/gpio.h>
 
 / {
     chosen {
@@ -38,7 +39,7 @@
 led_strip: ws2812b_strip {
     compatible = "worldsemi,ws2812b-gpio";
     label = "LED Strip";
-    gpios = <&xiao_d 10 GPIO_ACTIVE_HIGH>;  /* Change pin as needed */
+    gpios = <&xiao_d 10 GPIO_ACTIVE_HIGH>;
     chain-length = <6>;
     color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
 };
