@@ -2,10 +2,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
- 
-&led_strip {
-    chain-length = <6>;
-};
 
 / {
     macros {
@@ -45,8 +41,8 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            <&macro_press &kp LEFT_COMMAND>,
-            bindings = <&macro_tap &kp 3>,
+            bindings = <&macro_press &kp LEFT_COMMAND>,
+            <&macro_tap &kp 3>,
             <&macro_release &kp LEFT_COMMAND>;
         };
         press_win4: press_win4 {
@@ -54,8 +50,8 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            <&macro_press &kp LEFT_COMMAND>,
-            bindings = <&macro_tap &kp 4>,
+            bindings = <&macro_press &kp LEFT_COMMAND>,
+            <&macro_tap &kp 4>,
             <&macro_release &kp LEFT_COMMAND>;
         };
         press_win5: press_win5 {
@@ -63,8 +59,8 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            <&macro_press &kp LEFT_COMMAND>,
-            bindings = <&macro_tap &kp 5>,
+            bindings = <&macro_press &kp LEFT_COMMAND>,
+            <&macro_tap &kp 5>,
             <&macro_release &kp LEFT_COMMAND>;
         };
     };

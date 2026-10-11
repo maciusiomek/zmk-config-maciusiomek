@@ -31,4 +31,8 @@
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder>;
     };
+     
+    &led_strip {
+        chain-length = <6>;
+    };
 };
