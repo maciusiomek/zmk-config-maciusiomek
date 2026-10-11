@@ -1,0 +1,80 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+ 
+&led_strip {
+    chain-length = <6>;
+};
+
+/ {
+    macros {
+        press_prev: press_prev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&macro_tap &kp C_PREV>;
+        };
+
+        press_pause: press_pause {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&macro_tap &kp C_PP>;
+        };    
+
+        press_next: press_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&macro_tap &kp C_NEXT>;
+        };
+
+        press_mic: press_mic {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&macro_tap &kp F23>;
+        };
+        press_win3: press_win3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            <&macro_press &kp LEFT_COMMAND>,
+            bindings = <&macro_tap &kp 3>,
+            <&macro_release &kp LEFT_COMMAND>;
+        };
+        press_win4: press_win4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            <&macro_press &kp LEFT_COMMAND>,
+            bindings = <&macro_tap &kp 4>,
+            <&macro_release &kp LEFT_COMMAND>;
+        };
+        press_win5: press_win5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            <&macro_press &kp LEFT_COMMAND>,
+            bindings = <&macro_tap &kp 5>,
+            <&macro_release &kp LEFT_COMMAND>;
+        };
+    };
+    keymap {
+        compatible = "zmk,keymap";
+ 
+        default_layer {
+            bindings = <
+                &press_prev  &press_pause  &press_next  &press_mic  &press_win3  &press_win4  &press_win5  &bt BT_CLR 
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+    };
+};
