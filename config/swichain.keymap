@@ -69,7 +69,7 @@
  
         default_layer {
             bindings = <
-                &press_prev  &press_pause  &press_next  &press_mic  &press_win3  &press_win4  &press_win5  &bt BT_CLR 
+                &press_prev  &press_pause  &press_next  &press_mic  &press_win3  &press_win4  &press_win5  &bt BT_CLR >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
